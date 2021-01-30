@@ -1,0 +1,48 @@
+.positionRow{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 24px;
+    cursor: pointer;
+}
+
+.positionRow:hover{
+    background-color: #31363A;
+}
+
+.positionRow__intro h1{
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 2px;
+    padding-top: 10px;
+}
+
+.positionRow__intro p{
+    font-size: 12px;
+}
+
+.positionRow__numbers{
+    text-align: right;
+}
+
+.positionRow__numbers p{
+    font-size: 13px;
+}
+
+.positionRow__numbers h3{
+    font-size: 10px;
+    color: gray;
+}
+
+.positionRow__change{
+    text-align: right;
+}
+
+.positionRow__change h3{
+    font-size: 10px;
+    color: gray;
+}
+
+.positionRow__change p{
+    font-size: 13px;
+}

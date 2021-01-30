@@ -1,0 +1,21 @@
+.infosection__box{
+    padding: 20px;
+    border: 1px solid #31363A;
+    border-radius: 4px;
+}
+
+.infosection__header{
+    display: flex;
+    font-size: 18px;
+    font-weight: 900;
+    padding-bottom: 10px;
+}
+
+.infosection__legend{
+    display: flex;
+    justify-content:space-between;
+    border-bottom: 1px solid #42494D;
+    padding: 20px 0px 10px 88px;
+    align-items: center;
+    font-size: 12px;
+}

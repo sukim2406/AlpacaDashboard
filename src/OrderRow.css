@@ -1,0 +1,10 @@
+.orderRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orderRow__cancel{
+    color: #42494D;
+    cursor: pointer;
+}

@@ -1,0 +1,198 @@
+.modal__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 1000;
+}
+
+.modal__container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 50px;
+    z-index: 1000;
+    color: white;
+}
+
+.modal__text{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.modal__container__title{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal__container__title h1{
+    font-size: 40px;
+}
+
+.modal__container__padding{
+    width: 300px;
+}
+
+.modal__container__price{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    text-align: center;
+}
+
+.modal__assetInfo{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-evenly;
+    margin-bottom:  50px;
+}
+
+.modal__watchlists{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.modal__watchlists__header{
+    border-bottom: 1px solid #3b4754;
+    padding-bottom: 10px;
+}
+
+.modal__watchlists__list{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.modal__watchlists__row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal__watchlists__row p{
+    text-align: right;
+}
+
+.modal__container__btn{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.modal__order{
+    padding-top: 50px;
+    text-align: center;
+}
+
+.modal__order__header{
+    border-bottom: 1px solid #3b4754;
+}
+
+.modal__order__inputs{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__order__inputs__row{
+    display: flex;
+}
+
+.modal__order__qty{
+    padding-right: 50px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.modal__order__qty > input {
+    width: 60%;
+}
+
+.modal__order__side{
+    padding-left: 50px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.modal__order__side > input {
+    width: 60%;
+}
+
+.modal__order__type{
+    padding-right: 50px;
+    flex: 1 1 0 px;
+    display: flex;
+    justify-content: space-between;
+}
+.modal__order__type > input {
+    width: 60%;
+}
+
+
+.modal__order__time{
+    padding-left: 50px;
+    flex: 1 1 0 px;
+    display: flex;
+    justify-content: space-between;
+}
+.modal__order__time > input {
+    width: 60%;
+}
+
+
+.modal__order__limit{
+    padding-right: 50px;
+    flex: 1 1 0 px;
+    display: flex;
+    justify-content: space-between;
+}
+.modal__order__limit > input {
+    width: 60%;
+}
+
+
+.modal__order__stop{
+    padding-left: 50px;
+    flex: 1 1 0 px;
+    display: flex;
+    justify-content: space-between;
+}
+.modal__order__stop > input {
+    width: 60%;
+}
+
+.modal__order__trail__price{
+    padding-right: 50px;
+    flex: 1 1 0 px;
+    display: flex;
+    justify-content: space-between;
+}
+.modal__order__trail__price > input {
+    width: 60%;
+}
+
+.modal__order__trail__perc{
+    padding-left: 50px;
+    flex: 1 1 0 px;
+    display: flex;
+    justify-content: space-between;
+}
+.modal__order__trail__perc> input {
+    width: 60%;
+}
+
+.modal__order__error{
+    color: red;
+    display: none;
+}
