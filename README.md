@@ -1,4 +1,38 @@
-# Getting Started with Create React App
+# Alpaca Dashboard / Robinhood Clone
+    Stock Trading web app created with React for Alpaca API.
+    Design is cloned from Robinhood App with little changes.
+
+ This is a practice project to study and practice usage of React.
+ The end goal is to make algo-trading bot web application that uses React, Django and Alpaca.
+ 
+## Functionalities
+- Account info
+- Place / cancel orders
+- Manage watchlists
+- Linegraph of account balances 
+
+
+## To Use
+just need to add .env file in the project folder with your alpaca API key and Secret key
+
+```
+REACT_APP_API_KEY = YOUR ALPACA API KEY
+REACT_APP_SECRET_KEY = YOUR ALPACA API SECRET KEY
+```
+
+and if you want to use your live trading account remove paper:true line from Alpaca object in App.js
+```html
+    this.alpaca = new Alpaca({
+      keyId: process.env.REACT_APP_API_KEY,
+      secretKey: process.env.REACT_APP_SECRET_KEY,
+      paper: true  <!-- Remove this for live trading -->
+    })
+```
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +101,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
