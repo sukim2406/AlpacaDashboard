@@ -5,6 +5,8 @@
  This is a practice project to study and practice usage of React.
  The end goal is to make algo-trading bot web application that uses React, Django and Alpaca.
  
+ ![](readme_imgs/screenshot.png)
+ 
 ## Functionalities
 - Account info
 - Place / cancel orders
