@@ -70,9 +70,9 @@ class Header extends Component {
         if(e.keyCode===13){
             this.setModalOpen(true);
             try{
-                const barData = await this.props.alpaca.getBars('1D',this.state.value, {limit: 2});
-                const lastTrade = await this.props.alpaca.lastTrade(this.state.value);
-                const assetData = await this.props.alpaca.getAsset(this.state.value);
+                const barData = await this.props.alpaca.getBars('1D',this.state.value.toUpperCase(), {limit: 2});
+                const lastTrade = await this.props.alpaca.lastTrade(this.state.value.toUpperCase());
+                const assetData = await this.props.alpaca.getAsset(this.state.value.toUpperCase());
                 this.setState({
                     barData: barData[assetData.symbol][1],
                     lastTrade: lastTrade.last.price,
@@ -80,7 +80,20 @@ class Header extends Component {
                 })
             }
             catch(err){
-                console.log("ticker not found")
+                this.setState({
+                    assetData: {
+                        class: "N/A",
+                        easy_to_borrow: false,
+                        exchange: "N/A",
+                        id: "N/A",
+                        marginable: false,
+                        name: "Asset Not Found",
+                        shortable: false,
+                        status: "N/A",
+                        symbol: "Not Found",
+                        tradable: false,
+                    }
+                })
             }
         }
     }
@@ -104,7 +117,7 @@ class Header extends Component {
                 
                 {/* menu items */}
                 <div className="header__menuItems">
-                    <a onClick={this.liquidateClicked}>Liquidate ALL</a>
+                    <a href="#" onClick={this.liquidateClicked}>Liquidate ALL</a>
                 </div>
                 <div className="header__liquidateModal">
                     { this.state.liquidateOpen? <ModalLiquidate refreshPage={() => this.refreshPage()} onClose={() => this.setLiquidateOpen(false)} alpaca={this.props.alpaca}/> : null }

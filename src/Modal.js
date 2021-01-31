@@ -25,12 +25,11 @@ export default class Modal extends Component{
         this.setState({
             [e.target.name]: e.target.value
         });
-        console.log(e.target.name);
     }
 
     async submitClicked(){
         try{
-            const res = await this.props.alpaca.createOrder({
+            await this.props.alpaca.createOrder({
                 symbol: this.props.assetData.symbol,
                 qty: this.state.orderQty,
                 side: this.state.orderSide,
@@ -41,7 +40,7 @@ export default class Modal extends Component{
                 trail_price: this.state.orderTrailD === ""? null : this.state.orderTrailD,
                 trail_percent: this.state.orderTrailP === ""? null : this.state.orderTrailP,
             })
-    
+
             this.props.refreshPage();
             this.props.onClose();
         }
@@ -67,12 +66,11 @@ export default class Modal extends Component{
 
     assetExists(watchlist, symbol){
         let result = false;
-        watchlist.assets.map((asset) => {
+        watchlist.assets.forEach((asset) => {
             if(asset.symbol === symbol){
                 result = true;
             }
         });
-
         return result;
     }
     
@@ -87,7 +85,7 @@ export default class Modal extends Component{
             let watchlistData = [];
             const watchlists = await this.props.alpaca.getWatchlists();
             let watchlistsPromises = [];
-            watchlists.map((watchlist) => {
+            watchlists.forEach((watchlist) => {
                 watchlistsPromises.push(
                     getWatchlistInfo(watchlist).then((res) => {
                         watchlistData.push({
@@ -152,7 +150,7 @@ export default class Modal extends Component{
                                     <div className="modal__watchlists__row" key={i}>
                                         {this.assetExists(watchlist, this.props.assetData.symbol)}
                                         <p>{watchlist.name}</p>
-                                        <button onClick={this.assetExists(watchlist, this.props.assetData.symbol)? () => this.watchlistRemoveClicked(watchlist.id, this.props.assetData.symbol) : () => this.watchlistAddClicked(watchlist.id, this.props.assetData.symbol)}> {this.assetExists(watchlist, this.props.assetData.symbol)? "Remove" : "Add"}</button>
+                                        <button disabled={this.props.assetData.symbol === "Not Found"? "disabled" : ""} onClick={this.assetExists(watchlist, this.props.assetData.symbol)? () => this.watchlistRemoveClicked(watchlist.id, this.props.assetData.symbol) : () => this.watchlistAddClicked(watchlist.id, this.props.assetData.symbol)}> {this.assetExists(watchlist, this.props.assetData.symbol)? "Remove" : "Add"}</button>
                                     </div>
                                 ))
                             }
@@ -162,7 +160,7 @@ export default class Modal extends Component{
 
                     <div className="modal__order">
                         <div className="modal__order__header">
-                            <h2>Place an order</h2>
+                            <h2>Order</h2>
                         </div>
                         <div className="modal__order__inputs">
                             <div className="modal__order__inputs__row">
@@ -207,14 +205,13 @@ export default class Modal extends Component{
                             </div>
                         </div>
                         <div className= "modal__order__btn">
-                            <button onClick={this.submitClicked}>Place Order</button>
+                            <button disabled={this.props.assetData.symbol === "Not Found"? "disabled" : ""} onClick={this.submitClicked}>Place Order</button>
                         </div>
                         <div id="orderError" className="modal__order__error">
                             <h3>Error: please check your order details</h3>
                         </div>
                     </div>
                     <div className="modal__container__btn">
-                        <button>submit</button>
                         <button onClick={this.props.onClose}>Close</button>
                     </div>
                 </div>

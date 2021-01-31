@@ -57,7 +57,7 @@ class Stats extends Component {
             let watchlistsData = [];
             const watchlists = await this.props.alpaca.getWatchlists();
             let watchlistsPromises = []
-            watchlists.map((watchlist) => {
+            watchlists.forEach((watchlist) => {
                 watchlistsPromises.push(
                     getWatchlistInfo(watchlist).then((res) => {
                         watchlistsData.push({

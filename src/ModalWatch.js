@@ -21,9 +21,14 @@ export default class ModalWatch extends Component {
     }
 
     async submitClicked(){
-        const res = await this.props.alpaca.addWatchlist(this.state.value, []);
-        this.props.refreshPage();
-        this.props.onClose();
+        try{
+            await this.props.alpaca.addWatchlist(this.state.value, []);
+            this.props.refreshPage();
+            this.props.onClose();
+        }
+        catch(err){
+            console.log("error on modalwatch.js submitClicked");
+        }   
     }
 
     render() {

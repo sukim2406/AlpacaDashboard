@@ -85,7 +85,6 @@
 
 .modal__container__btn{
     display: flex;
-    justify-content: space-between;
     margin-left: 0;
     margin-right: 0;
 }
@@ -195,4 +194,9 @@
 .modal__order__error{
     color: red;
     display: none;
+}
+
+.modal__order__btn{
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
