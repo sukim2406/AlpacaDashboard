@@ -9,6 +9,7 @@
  
 ## Functionalities
 - Account info
+- Ticker search
 - Place / cancel orders
 - Manage watchlists
 - Linegraph of account balances 
